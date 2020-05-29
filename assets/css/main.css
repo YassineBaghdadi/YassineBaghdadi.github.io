@@ -9,17 +9,143 @@
 /*skills */
 
 /* Make sure that padding behaves as expected */
-.cont {box-sizing:border-box}
+.cont {
+	box-sizing:border-box;
+	cursor: pointer;
+	animation: none;
+}
+.cont:hover > div > .progress {
+	background-color: #4CAF50; color: white;
+	animation: load 1.5s normal forwards;
+}
+
+@keyframes load {
+	
+	0% { width: 0; background-color: #ff1a1a;}
+	20%{background-color: #ffa64d;}
+	40%{background-color: #c9c63e;}
+	60%{background-color: #87d369;}
+	80%{background-color: #4CAF50;}
+	100% {  }
+  }
+
+
 
 /* Container for skill bars */
-
-
 .skills {
   text-align: right; /* Right-align text */
 }
 
 
 
+.ball {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+	position: relative; }
+	.ball:before {
+	  content: "";
+	  position: absolute;
+	  top: 1%;
+	  left: 5%;
+	  width: 90%;
+	  height: 90%;
+	  border-radius: 100%;
+	  -webkit-filter: blur(5px);
+	  filter: blur(5px);
+	  z-index: 2; }
+	.ball:after {
+	  content: "";
+	  position: absolute;
+	  display: none;
+	  top: 5%;
+	  left: 10%;
+	  width: 80%;
+	  height: 80%;
+	  border-radius: 100%;
+	  -webkit-filter: blur(1px);
+	  filter: blur(1px);
+	  z-index: 2;
+	  -webkit-transform: rotateZ(-30deg);
+	  transform: rotateZ(-30deg); }
+	.ball .shadow {
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  
+	  -webkit-transform: rotateX(90deg) translateZ(-160px);
+	  transform: rotateX(90deg) translateZ(-160px);
+	  z-index: 1; }
+	.ball.plain {}
+	  .ball.plain:before, .ball.plain:after {
+		display: none; }
+	.ball.bubble {
+	  
+	  -webkit-animation: bubble-anim 2s ease-out infinite;
+	  animation: bubble-anim 2s ease-out infinite; }
+	  .ball.bubble:before {
+		-webkit-filter: blur(0);
+		filter: blur(0);
+		height: 80%;
+		width: 40%;
+		
+		-webkit-transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
+		transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg); }
+	  .ball.bubble:after {
+		display: block;
+		 }
+  
+
+  @-webkit-keyframes bubble-anim {
+	0% {
+	  -webkit-transform: scale(1);
+	  transform: scale(1); }
+  
+	20% {
+	  -webkit-transform: scaleY(0.95) scaleX(1.05);
+	  transform: scaleY(0.95) scaleX(1.05); }
+  
+	48% {
+	  -webkit-transform: scaleY(1.1) scaleX(0.9);
+	  transform: scaleY(1.1) scaleX(0.9); }
+  
+	68% {
+	  -webkit-transform: scaleY(0.98) scaleX(1.02);
+	  transform: scaleY(0.98) scaleX(1.02); }
+  
+	80% {
+	  -webkit-transform: scaleY(1.02) scaleX(0.98);
+	  transform: scaleY(1.02) scaleX(0.98); }
+  
+	97%, 100% {
+	  -webkit-transform: scale(1);
+	  transform: scale(1); } }
+  
+  @keyframes bubble-anim {
+	0% {
+	  -webkit-transform: scale(1);
+	  transform: scale(1); }
+  
+	20% {
+	  -webkit-transform: scaleY(0.95) scaleX(1.05);
+	  transform: scaleY(0.95) scaleX(1.05); }
+  
+	48% {
+	  -webkit-transform: scaleY(1.1) scaleX(0.9);
+	  transform: scaleY(1.1) scaleX(0.9); }
+  
+	68% {
+	  -webkit-transform: scaleY(0.98) scaleX(1.02);
+	  transform: scaleY(0.98) scaleX(1.02); }
+  
+	80% {
+	  -webkit-transform: scaleY(1.02) scaleX(0.98);
+	  transform: scaleY(1.02) scaleX(0.98); }
+  
+	97%, 100% {
+	  -webkit-transform: scale(1);
+	  transform: scale(1); } }
 
 
 html, body, div, span, applet, object,
@@ -1960,6 +2086,7 @@ input, select, textarea {
 	.icon {
 		text-decoration: none;
 		text-decoration: none;
+		cursor: pointer;
 	}
 
 		.icon:before {
@@ -2000,6 +2127,7 @@ input, select, textarea {
 			display: block;
 			margin: 0 0 1.5em 0;
 			cursor: default;
+			cursor: pointer;
 		}
 
 			.icon.featured:before {
@@ -2386,6 +2514,7 @@ input, select, textarea {
 					top: 20px;
 					margin: -50px 0 50px -40px;
 					width: auto;
+					cursor: pointer;
 				}
 
 				.box.style1 {
