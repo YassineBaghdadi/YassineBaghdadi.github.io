@@ -57,74 +57,118 @@
 		<!-- Work -->
 			<article id="work" class="wrapper style2">
 				<div class="container ">
-					<div style="width: 100%; margin:0 auto; padding: 0px;" class="row aln-center skillbox">
-						<div style="margin:0 auto; " class="row">
-							<header style="width: 100%; margin:0 auto;">
-								<h3>Programming</h3>
-							</header>
-							<div class="skill" >
-								<img src="images/py.png" width="70px" height="70px">
-							</div>
-							<div class="skill">
-								<img src="images/java.png" width="70px" height="70px">
-							</div>
-							<div class="skill">
-								<img src="images/c_sharp.png" width="70px" height="70px">
-							</div>
-							
-							<div class="skill">
-								<img src="images/mysql.png" width="70px" height="70px">
-							</div>
-							<div class="skill">
-								<img src="images/php.png" width="70px" height="70px">
-							</div>
-							<div class="skill">
-								<img src="images/html-css.png" width="70px" height="70px">
-							</div>
-							<div class="skill">
-								<img src="images/js.png" width="70px" height="70px">
-							</div>
-
+					<header>
+						<h2>Here's all the stuff I do.</h2>
+					</header>
+					<div class="row aln-center ">
+						<!--
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1">
+								<span class="icon featured"><img src="ii.png" width="50px" height="50px"></span>
+								<h3>Consequat lorem</h3>
+								<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1">
+								<span class="icon featured"><img src="ii.png" width="90px" height="90px"></span>
+								<h3>Consequat lorem</h3>
+								<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1">
+								<span class="icon solid featured fa-camera-retro"></span>
+								<h3>Lorem dolor tempus</h3>
+								<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+							</section>
+						</div>-->
+						
+						<div class="col-4 col-6-small col-5-small" >
+							<section class="box style1 cont">
+									<span class="icon featured"><img src="images/py.png" width="70px" height="70px"></span>
+									<div style="background-color: #ddd;"><div class="skills progress" style="width: 90%; height: 7px; background-color: #4CAF50;">.</div></div>
+							</section>
+						</div>
+						
+						
+						<div class="col-4 col-6-small col-5-small">
+							<section class="box style1 cont">
+									<span class="icon featured"><img src="images/mysql.png" width="70px" height="70px"></span>
+									<div style="background-color: #ddd;"><div class="skills progress" style="width: 90%; height: 7px; background-color: #4CAF50; color: white">.</div></div>
+							</section>
 						</div>
 
 						
-						<div style="  margin:0 auto; padding: 20px;" class="row">
-							<header style="width: 100%; margin:0 auto;">
-								<h3>Primary O.S</h3>
-							</header>
-							<div class="skill">
-								<img src="images/mint.png" width="70px" height="70px">
-							</div>
-							<div class="skill">
-								<img src="images/ubuntu.png" width="70px" height="70px">
-							</div>
-							<div class="skill">
-								<img src="images/kali.png" width="70px" height="70px">
-							</div>
-							<div class="skill">
-								<img src="images/windows.png" width="70px" height="70px">
-							</div>
+						<div class="col-4 col-6-small col-5-small">
+							<section class="box style1 cont">
+									<span class="icon featured"><img src="images/linux.png" width="70px" height="70px"></span>
+									<div style="background-color: #ddd;"><div class="skills progress" style="width: 85%; height: 7px; background-color: #4CAF50; color: white">.</div></div>
+							</section>
 						</div>
-
-						<div style="width: 70%;  margin:0 auto; padding: 20px;" class="row">
-							<header style="width: 100%; margin:0 auto;">
-								<h3>I used to be good with some software as well</h3>
-							</header>
-							<div class="skill">
-								<img src="images/git.png" width="70px" height="70px">
-							</div>
-							<div class="skill">
-								<img src="images/android-studio.png" width="70px" height="70px">
-							</div>
-
-							<div class="skill">
-							<img src="images/packet.png" width="70px" height="70px">
-							</div>
-							<div class="skill">
-							<img src="images/ps.png" width="70px" height="70px">
-							</div>
+					
+						
+						<div class="col-4 col-6-small col-5-small">
+								<section class="box style1 cont">
+										<span class="icon featured"><img src="images/java.png" width="70px" height="70px"></span>
+										<div style="background-color: #ddd;"><div class="skills progress" style="width: 70%; height: 7px; background-color: #4CAF50; color: white">.</div></div>
+								</section>
 						</div>
 						
+						
+						<div class="col-4 col-6-small col-5-small">
+							<section class="box style1 cont">
+									<span class="icon featured"><img src="images/php.png" width="70px" height="70px"></span>
+									<div style="background-color: #ddd;"><div class="skills progress" style="width: 60%; height: 7px; background-color: #4CAF50; color: white">.</div></div>
+							</section>
+						</div>
+						
+						
+						<div class="col-4 col-6-small col-5-small">
+							<section class="box style1 cont">
+									<span class="icon featured"><img src="images/html-css.png" width="70px" height="70px"></span>
+									<div style="background-color: #ddd;"><div class="skills progress" style="width: 64%; height: 7px; background-color: #4CAF50; color: white">.</div></div>
+							</section>
+						</div>
+					
+						
+						<div class="col-4 col-6-small col-5-small">
+							<section class="box style1 cont">
+									<span class="icon featured"><img src="images/android-studio.png" width="70px" height="70px"></span>
+									<div style="background-color: #ddd;"><div class="skills progress" style="width: 65%; height: 7px; background-color: #4CAF50; color: white">.</div></div>
+							</section>
+						</div>
+						
+						<div class="col-4 col-6-small col-5-small">
+								<section class="box style1 cont">
+										<span class="icon featured"><img src="images/c_sharp.png" width="70px" height="70px"></span>
+										<div style="background-color: #ddd;"><div class="skills progress" style="width: 55%; height: 7px; background-color: #4CAF50; color: white">.</div></div>
+								</section>
+						</div>
+						
+						<div class="col-4 col-6-small col-5-small">
+								<section class="box style1 cont">
+										<span class="icon featured"><img src="images/js.png" width="70px" height="70px"></span>
+										<div style="background-color: #ddd;"><div class="skills progress" style="width: 40%; height: 7px; background-color: #4CAF50; color: white">.</div></div>
+								</section>
+						</div>
+						
+						
+						
+						<div class="col-4 col-6-small col-5-small">
+								<section class="box style1 cont">
+										<span class="icon featured"><img src="images/ps.png" width="70px" height="70px"></span>
+										<div style="background-color: #ddd;"><div class="skills progress" style="width: 80%; height: 7px; background-color: #4CAF50; color: white">.</div></div>
+								</section>
+						</div>
+						
+						<div class="col-4 col-6-small col-5-small aimless">
+								<section class="box style1 cont">
+										<span class="icon featured"><img src="images/git.png" width="70px" height="70px"></span>
+										<div style="background-color: #ddd;"><div class="skills progress" style="width: 75%; height: 7px; background-color: #4CAF50; color: white">.</div></div>
+								</section>
+						</div>
+
 					</div>
 					<footer>
 						<a href="#portfolio" class="button large scrolly">See some of my recent work</a>
@@ -276,7 +320,6 @@
 						$(".aimless").stop();
 					});
 				});
-
 
 
 					</script>
