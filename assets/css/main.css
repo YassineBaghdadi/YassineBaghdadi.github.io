@@ -28,6 +28,15 @@ header > h3{
   }
 
 
+.cert {
+	transition: transform .2s;
+  }
+  
+  .cert:hover {
+	transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+
 /* Make sure that padding behaves as expected */
 .cont {
 	box-sizing:border-box;
