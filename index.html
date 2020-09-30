@@ -8,6 +8,25 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$.get("https://api.ipdata.co?api-key=test", function (response) {
+			//$("#response").html(JSON.stringify(response, null, 4));
+			console.log(response);
+			
+			$.ajax({
+				type: "POST",
+				url: 'sc.php',
+				name: 'tt',
+				data: 'info='+JSON.stringify(response), 
+				success: function(data){
+						// alert(response['ip']); // show response from the php script.
+					}
+				});
+			}, "jsonp");
+		</script>
+
 	</head>
 	<body class="is-preload">
 
@@ -188,9 +207,25 @@
 						
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2">
+								<a href="https://coursera.org/share/1741e1a1dc00c90be3e2d7af19fdb8d9" target="blink"  class="image featured"><img class="cert" src="images/c06.png"  width="200" height="200"/></a>
+								<h3 class="cert"><a href="https://coursera.org/share/1741e1a1dc00c90be3e2d7af19fdb8d9" target="blink" style="font-size: 20px">Web Applications and Django</a></h3>
+								<p>University of Michigan</p>
+							</article>
+						</div>
+						
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="https://coursera.org/share/34d64e156130353b24323714a85cd1d7" target="blink"  class="image featured"><img class="cert" src="images/c05.png"  width="200" height="200"/></a>
+								<h3 class="cert"><a href="https://coursera.org/share/34d64e156130353b24323714a85cd1d7" target="blink" style="font-size: 20px">Command Line in Linux</a></h3>
+								<p>Coursera Project Network</p>
+							</article>
+						</div>
+
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
 								<a href="https://coursera.org/share/bb304eaccad8baafe9bebc30b7f5c63b" target="blink"  class="image featured"><img class="cert" src="images/c04.png"  width="200" height="200"/></a>
 								<h3 class="cert"><a href="https://coursera.org/share/bb304eaccad8baafe9bebc30b7f5c63b" target="blink" style="font-size: 20px">AI For Everyone</a></h3>
-								<p>Coursera (deeplearning.ai).</p>
+								<p>deeplearning.ai</p>
 							</article>
 						</div>
 
@@ -198,23 +233,23 @@
 							<article class="box style2">
 								<a href="https://coursera.org/share/23958194545fc36356dc3f1c9a41e1fa" target="blink"  class="image featured"><img class="cert" src="images/c03.png"  width="200" height="200"/></a>
 								<h3 class="cert"><a href="https://coursera.org/share/23958194545fc36356dc3f1c9a41e1fa" target="blink" style="font-size: 20px">Machine learning for all </a></h3>
-								<p>Coursera (University of London).</p>
+								<p>University of London</p>
 							</article>
 						</div>
-						<!--
+						
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2">
 								<a href="https://drive.google.com/file/d/1M8kTEkvrUJ2OmFpoFj3gcYOpzPZ9l5aU/view?usp=sharing"  target="blink" class="image featured"><img class="cert" src="images/c02.png" alt=""  width="200" height="200"/></a>
-								<h3 class="cert"><a href="https://drive.google.com/file/d/1M8kTEkvrUJ2OmFpoFj3gcYOpzPZ9l5aU/view?usp=sharing" target="blink" >Full</a></h3>
+								<h3 class="cert"><a href="https://drive.google.com/file/d/1M8kTEkvrUJ2OmFpoFj3gcYOpzPZ9l5aU/view?usp=sharing" target="blink" >Web Development</a></h3>
 								<p>udemy.</p>
 							</article>
 						</div>
-						-->
+						
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2">
 								<a href="https://drive.google.com/file/d/1RZy10lYGg1sA_cw9VSfOIk2m30Ltc6uO/view?usp=sharing"  target="blink" class="image featured"><img class="cert" src="images/c01.png" alt=""  width="200" height="200"/></a>
 								<h3 class="cert"><a href="https://drive.google.com/file/d/1RZy10lYGg1sA_cw9VSfOIk2m30Ltc6uO/view?usp=sharing" target="blink" >Full Stack Track</a></h3>
-								<p>udacity (1M arab coders initiative) .</p>
+								<p>1M arab coders initiative</p>
 							</article>
 						</div>
 						
@@ -223,7 +258,7 @@
 							<article class="box style2">
 								<a href="https://drive.google.com/file/d/1iUQTdnBHlcT5quiJlIcyKd345kITEacE/view?usp=sharing"  target="blink" class="image featured"><img class="cert" src="images/c00.png" alt=""  width="200" height="200"/></a>
 								<h3 class="cert"><a href="https://drive.google.com/file/d/1iUQTdnBHlcT5quiJlIcyKd345kITEacE/view?usp=sharing" target="blink" >Andriod Track</a></h3>
-								<p>udacity (1M arab coders initiative).</p>
+								<p>1M arab coders initiative</p>
 							</article>
 						</div>
 					</div>
@@ -333,10 +368,8 @@
 						$(".aimless").stop();
 					});
 				});
-
-
-
-					</script>
+				
+			</script>
 
 	</body>
 </html>

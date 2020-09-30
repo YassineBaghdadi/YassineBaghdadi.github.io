@@ -1,0 +1,28 @@
+<!DOCTYPE html>  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+    <title></title>  
+     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ <script type="text/javascript"> 
+    
+    var info;
+$.get("https://api.ipdata.co?api-key=test", function (response) {
+    $("#response").html(JSON.stringify(response, null, 4));
+    console.log(response);
+    info = response;
+}, "jsonp");
+$.ajax({
+    type: "POST",
+    url: 'sc.php',
+    data: info, 
+    success: function(data){
+            alert(data); // show response from the php script.
+        }
+    });
+</script>  
+</head>  
+<body>  
+<pre id="response" name='tt' style="visibility: hidden;"></pre>
+</body>  
+</html> 
