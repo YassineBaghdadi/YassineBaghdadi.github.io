@@ -5,7 +5,11 @@
 img{
 	cursor: pointer;
 }
-
+.center {
+	border: 0px solid #ffffff;
+	display: flex;
+	justify-content: center;
+	}
 
 /*
 	Miniport by HTML5 UP
