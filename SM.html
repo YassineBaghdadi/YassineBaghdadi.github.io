@@ -1,0 +1,170 @@
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="author" content="Yassine Baghdadi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+.content{
+    width: 70%;
+    /*display: block;*/
+    margin: auto;
+    margin-top: 4%;
+    box-shadow: 2px 2px 20px 2px #dddddd;
+}
+.title{
+    background-color: #4CAF50;
+    padding-left: 10%;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 24px;
+    box-shadow: 0px 0px 20px 0px #dddddd;
+
+}
+.jobT{
+    color: #C3E3C3;
+    font-size: 16px;
+}
+.SM{
+    background-color: #f7f5f5e5;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    
+}
+.item{
+    text-decoration: none;
+    
+}
+.SM button {
+    background-color: #c3e3c300;
+    border: 0px solid #fff; 
+    color: black; 
+    cursor: pointer; 
+    width: 100%; 
+    display: block; 
+    font-size: 18px;
+    text-align: left;
+    padding-left: 10%;
+    height: 60px;
+  }
+  button:not(:last-child) {
+    border-bottom: 1px solid #c9c9c9; 
+  }
+  button:hover {
+    background-color: #dddddd;
+  }
+a{
+    padding: 0%;
+    text-decoration: none;
+  }
+
+
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa {
+    padding: 10px;
+    font-size: 10px;
+    width: 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  .fa-whatsapp {
+    background: #43b84d;
+    color: white;
+  }
+
+  .fa-linkedin {
+    background: #437ab8;
+    color: white;
+  }
+
+  .fa-github {
+    background: #000;
+    color: white;
+  }
+  .fa-instagram {
+    background: #E94869;
+    color: white;
+  }
+  .fa-globe {
+    background: grey;
+    color: #fff;
+  }
+    </style>
+    <div class="content">
+        <div class="title">
+            <p>Yassine Baghdadi</p>
+            <p class="jobT">IT Developer</p>
+        </div>
+        <div class="SM">
+            <button class="item" onclick="goTo('https://yassinebaghdadi.com/')">
+                <div class="fa fa-globe"></div>
+                PortFolio
+            </button>
+
+            <button class="item" onclick="goTo('https://api.whatsapp.com/send?phone=+212630504606')">
+                <div class="fa fa-whatsapp"></div>
+                WhatsApp
+            </button>
+
+            <button class="item" onclick="goTo('https://linkedin.com/in/yassine-baghdadi-687064182/')">
+                <div class="fa fa-linkedin"></div>
+                LinkedIn
+            </button>
+
+            <button class="item" onclick="goTo('https://github.com/YassineBaghdadi')">
+                <div class="fa fa-github"></div>
+                GitHub
+            </button>
+
+            <button class="item" onclick="goTo('https://www.instagram.com/yassine__baghdadi/')">
+                <div class="fa fa-instagram"></div>
+                Instagram
+            </button>
+
+            <button class="item" onclick="goTo('https://twitter.com/Y_acineBaghdadi')">
+                <div class="fa fa-twitter"></div>
+                Twitter
+            </button>
+
+            <button class="item" onclick="goTo('https://www.facebook.com/yassine.baghdadi.deve/')">
+                <div class="fa fa-facebook"></div>
+                Facebook
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function goTo(url){
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
