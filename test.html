@@ -2,27 +2,48 @@
 <html xmlns="http://www.w3.org/1999/xhtml">  
 <head>  
     <title></title>  
-     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
- <script type="text/javascript"> 
-    
-    var info;
-$.get("https://api.ipdata.co?api-key=test", function (response) {
-    $("#response").html(JSON.stringify(response, null, 4));
-    console.log(response);
-    info = response;
-}, "jsonp");
-$.ajax({
-    type: "POST",
-    url: 'sc.php',
-    data: info, 
-    success: function(data){
-            alert(data); // show response from the php script.
-        }
-    });
-</script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+    <script >
+        jQuery.post('/sc.php', {
+           
+        }, function(response){
+            console.log(response);
+        })
+
+/*
+        $.getJSON('https://api.db-ip.com/v2/free/self', function(dt) {
+        var d = new Date();
+        dt["DateTime"] = d;
+        
+        console.log(dt);
+        
+        $.getJSON( "/info.json", function( data ) {
+            
+        data.push(dt);      
+
+        var newData = JSON.stringify(data);
+        jQuery.post('/sc.php', {
+            "newData": newData
+        }, function(response){
+            
+            console.log(response);
+        })
+
+
+        });
+
+   
+
+        });
+*/
+    </script>
 </head>  
 <body>  
-<pre id="response" name='tt' style="visibility: hidden;"></pre>
+    <a href="https://info.flagcounter.com/okl0">
+        <img src="https://s05.flagcounter.com/count2/okl0/bg_FFFFFF/txt_000000/border_CCCCCC/columns_8/maxflags_20/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0">
+    </a>
 </body>  
 </html> 

@@ -1,8 +1,5 @@
 <?php
-
-$data = $_POST['info'];
-$fp = fopen('info.json', 'a');
-fwrite($fp, $data);
-fclose($fp);
-
+<?PHP
+echo shell_exec("python3 getInfo.py");
+?>
 ?>
