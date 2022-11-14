@@ -20,7 +20,9 @@ function getCntnt(id){
       if (this.status == 200) {
         // console.log(this.responseText);
         $('#cntnt').html(this.responseText);
+        $('#ttl').html(id);
         $(`#${id}`).addClass('active');
+
       }else {
         // ila kan chi error
       }
@@ -36,7 +38,7 @@ function getCntnt(id){
 
 $(document).ready(function (){
 
-  getCntnt('dashboard');
+  getCntnt('Dashboard');
 
 
 });
