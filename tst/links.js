@@ -29,7 +29,7 @@ function getCntnt(id){
 
     }
   }
-  xhttp.open('GET', `${id}.html`, true);
+  xhttp.open('GET', `assets/pgs/${id}.html`, true);
   xhttp.send();
 
 
