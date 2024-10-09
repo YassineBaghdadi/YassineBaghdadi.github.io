@@ -1,9 +1,19 @@
 <script>
-    if(prompt("Please enter your name:") == Math.floor((new Date() - new Date('2023-05-24')) / 86400000) + 1){
-        alert('i really mean it .... ')
-        window.location.replace('https://www.instagram.com/reel/DAJuDRDtoPk/?igsh=MTJ0dWFwOHd1ODQ5dg==')
+    var d = prompt("Please enter your name:") 
+    if(d){
+        if (d == Math.floor((new Date() - new Date('2023-05-24')) / 86400000) + 1) {
+            alert('i really mean it .... ')
+            window.location.replace('https://www.instagram.com/reel/DAJuDRDtoPk/?igsh=MTJ0dWFwOHd1ODQ5dg==')
+            
+        }else{
+            alert('smo7aaaaaaaaat this is just for her :)')
+        }
 
     }else{
-        alert('smo7aaaaaaaaat just for her :)')
+        location.reload();
+    }
+
+    if (condition) {
+        
     }
 </script>
