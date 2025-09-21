@@ -1,0 +1,27 @@
+{
+  "name": "yassinebaghdadi.github.io",
+  "version": "1.0.0",
+  "description": "[yassinebaghdadi.com](https://yassinebaghdadi.com/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "moment-timezone": "^0.6.0",
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YassineBaghdadi/YassineBaghdadi.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YassineBaghdadi/YassineBaghdadi.github.io/issues"
+  },
+  "homepage": "https://github.com/YassineBaghdadi/YassineBaghdadi.github.io#readme"
+}
